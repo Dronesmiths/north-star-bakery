@@ -151,3 +151,156 @@ video {
   margin-top: 0.75rem;
 }
 
+/* section cards */
+.section-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+section {
+  background-color: #FAF3E8;
+  border: 2px solid #C97A3E;
+  border-radius: 8px;
+  padding: 1.35rem;
+  margin-bottom: 1.25rem;
+}
+
+.section-grid section {
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+ul {
+  padding-left: 1.25rem;
+  margin-top: 0.4rem;
+  margin-bottom: 0;
+}
+
+li {
+  margin-bottom: 0.45rem;
+}
+
+/* contact and pre-order form */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+fieldset {
+  border: 2px solid #4E2A14;
+  border-radius: 6px;
+  padding: 1.1rem;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+legend {
+  font-size: 1.15rem;
+  font-weight: bold;
+  padding: 0 0.5rem;
+}
+
+label {
+  font-weight: bold;
+  color: #24201D;
+  margin-top: 0.2rem;
+}
+
+input,
+select,
+textarea {
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
+  color: #24201D;
+  background-color: #FAF3E8;
+  border: 1px solid #4E2A14;
+  border-radius: 4px;
+  padding: 0.6rem;
+  width: 100%;
+}
+
+button[type="submit"] {
+  background-color: #4E2A14;
+  color: #FAF3E8;
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 0.75rem 1.5rem;
+  border: 2px solid #4E2A14;
+  border-radius: 6px;
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+button[type="submit"]:hover,
+button[type="submit"]:focus {
+  background-color: #C97A3E;
+  color: #24201D;
+  border-color: #4E2A14;
+}
+
+footer {
+  background-color: #4E2A14;
+  color: #FAF3E8;
+  padding: 1.25rem;
+  margin-top: auto;
+  border-top: 4px solid #C97A3E;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* desktop layout */
+@media (min-width: 768px) {
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1rem max(2rem, calc((100% - 1080px) / 2 + 2rem));
+  }
+
+  nav ul {
+    flex-direction: row;
+    gap: 1.25rem;
+  }
+
+  main {
+    padding: 2.25rem 2rem;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  .section-grid {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: stretch;
+  }
+
+  .section-grid section {
+    flex: 1 1 300px;
+  }
+
+  .section-grid section.form-card {
+    flex: 2 1 560px;
+  }
+
+  footer {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1.25rem max(2rem, calc((100% - 1080px) / 2 + 2rem));
+  }
+}
