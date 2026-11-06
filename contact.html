@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>North Star Bakery - Contact and Pre-Orders</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
@@ -22,6 +23,7 @@
     <h1>Contact Us and Pre-Order Request</h1>
     <p>Fill out the form below to ask a general question or request a pre-order for pickup. We'll email you back within one business day to confirm your order details.</p>
 
+    <div class="section-grid">
       <section>
         <h2>Location and Hours of Operation</h2>
         <p>Address: 412 North Star Avenue, Minneapolis, MN 55401</p>
@@ -33,7 +35,7 @@
         </ul>
       </section>
 
-      <section>
+      <section class="form-card">
         <h2>Inquiry and Pre-Order Request Form</h2>
         <form action="/submit-order" method="post">
           <fieldset>
@@ -70,6 +72,7 @@
           <button type="submit">Send Request</button>
         </form>
       </section>
+    </div>
   </main>
 
   <footer>

@@ -1,0 +1,153 @@
+/* North Star Bakery stylesheet */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #FAF3E8;
+  color: #24201D;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* header and navigation */
+header {
+  background-color: #4E2A14;
+  color: #FAF3E8;
+  padding: 1rem 1.25rem;
+  border-bottom: 4px solid #C97A3E;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+header img {
+  width: 88px;
+  height: 88px;
+  object-fit: contain;
+  border-radius: 8px;
+  background-color: #FAF3E8;
+  padding: 4px;
+  margin-bottom: 0;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+nav a {
+  color: #FAF3E8;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.45rem 0.85rem;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+nav a:hover,
+nav a:focus {
+  background-color: #C97A3E;
+  color: #24201D;
+}
+
+nav a[aria-current="page"] {
+  border-bottom: 3px solid #C97A3E;
+}
+
+/* main page area */
+main {
+  flex: 1;
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem;
+}
+
+h1,
+h2,
+legend {
+  font-family: Georgia, serif;
+  color: #4E2A14;
+  margin-top: 0;
+}
+
+h1 {
+  font-size: 1.85rem;
+  border-bottom: 2px solid #C97A3E;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.85rem;
+}
+
+h2 {
+  font-size: 1.35rem;
+  margin-bottom: 0.65rem;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+/* images and video */
+img,
+video {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.hero-image {
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+  border: 2px solid #C97A3E;
+  margin-bottom: 1.5rem;
+}
+
+.section-grid img {
+  width: 100%;
+  height: 185px;
+  object-fit: cover;
+}
+
+figure {
+  margin: 1rem 0;
+  padding: 0.75rem;
+  background-color: #FAF3E8;
+  border: 1px solid #C97A3E;
+  border-radius: 6px;
+}
+
+figure img {
+  margin-bottom: 0.5rem;
+}
+
+figcaption {
+  font-size: 0.92rem;
+  font-weight: bold;
+  color: #4E2A14;
+}
+
+video {
+  width: 100%;
+  max-width: 720px;
+  border: 2px solid #C97A3E;
+  margin-top: 0.75rem;
+}
+
