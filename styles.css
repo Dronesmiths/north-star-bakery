@@ -268,7 +268,11 @@ footer p {
   header {
     flex-direction: row;
     justify-content: space-between;
-    padding: 1rem max(2rem, calc((100% - 1080px) / 2 + 2rem));
+    max-width: 1080px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    border-radius: 0 0 8px 8px;
   }
 
   nav ul {
@@ -301,6 +305,118 @@ footer p {
   footer {
     flex-direction: row;
     justify-content: space-between;
-    padding: 1.25rem max(2rem, calc((100% - 1080px) / 2 + 2rem));
+    max-width: 1080px;
+    width: 100%;
+    margin: auto auto 0 auto;
+    padding: 1.25rem 2rem;
+    border-radius: 8px 8px 0 0;
   }
+}
+
+/* interactive menu filter and saved pre-order panel */
+.interactive-panel {
+  background-color: #FAF3E8;
+  border: 2px solid #4E2A14;
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.filter-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.filter-btn,
+.save-item-btn,
+.secondary-btn {
+  background-color: #FAF3E8;
+  color: #4E2A14;
+  font-family: Arial, sans-serif;
+  font-size: 0.95rem;
+  font-weight: bold;
+  padding: 0.5rem 0.95rem;
+  border: 2px solid #4E2A14;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.filter-btn:hover,
+.filter-btn:focus,
+.save-item-btn:hover,
+.save-item-btn:focus,
+.secondary-btn:hover,
+.secondary-btn:focus {
+  background-color: #C97A3E;
+  color: #24201D;
+}
+
+.filter-btn.active-filter,
+.save-item-btn.saved-active {
+  background-color: #4E2A14;
+  color: #FAF3E8;
+  border-color: #4E2A14;
+}
+
+.save-item-btn {
+  margin-top: 0.35rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.88rem;
+  padding: 0.35rem 0.75rem;
+  display: inline-block;
+}
+
+.status-note {
+  font-weight: bold;
+  color: #4E2A14;
+  margin-bottom: 0.5rem;
+}
+
+.saved-summary-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.field-error {
+  display: none;
+  background-color: #4E2A14;
+  color: #FAF3E8;
+  border-left: 4px solid #C97A3E;
+  padding: 0.45rem 0.7rem;
+  border-radius: 4px;
+  font-size: 0.92rem;
+  font-weight: bold;
+  margin-top: 0.15rem;
+}
+
+.field-error.visible-error {
+  display: block;
+}
+
+input.input-invalid,
+select.input-invalid,
+textarea.input-invalid {
+  border: 2px solid #C97A3E;
+}
+
+.form-feedback-box {
+  display: none;
+  background-color: #FAF3E8;
+  border: 2px solid #4E2A14;
+  border-left: 6px solid #C97A3E;
+  padding: 0.9rem 1rem;
+  border-radius: 6px;
+  font-weight: bold;
+  color: #4E2A14;
+  margin-top: 0.5rem;
+}
+
+.form-feedback-box.visible-feedback {
+  display: block;
 }

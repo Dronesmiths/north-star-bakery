@@ -5,10 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>North Star Bakery - Products</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
   <header>
-    <img src="bakery-logo.png" alt="North Star Bakery logo with a star and wheat icon" width="96" height="96">
+    <img src="bakery-logo.png" alt="North Star Bakery logo with a star and wheat icon" width="88" height="88">
     <nav aria-label="Primary">
       <ul>
         <li><a href="index.html">Home</a></li>
@@ -21,10 +22,34 @@
 
   <main>
     <h1>Our Bakery Products</h1>
-    <p>Everything on our menu is baked fresh each morning. We don't use an online checkout system, so if you'd like to reserve a pre-order or custom cake, please use the form on our <a href="contact.html">Contact and Pre-Orders page</a>.</p>
+    <p>Everything on our menu is baked fresh each morning. We don't use an online checkout system, so if you'd like to reserve a pre-order or custom cake, save your favorite items below or use the form on our <a href="contact.html">Contact and Pre-Orders page</a>.</p>
+
+    <section class="interactive-panel" aria-labelledby="filter-heading">
+      <h2 id="filter-heading">Filter Menu by Category &amp; Build Your Pre-Order List</h2>
+      <p>Select a category below to filter our menu, or click <strong>Add to Pre-Order List</strong> on any item to save it in your browser for your pre-order request.</p>
+      <div class="filter-controls" role="group" aria-label="Product category filter">
+        <button type="button" class="filter-btn active-filter" data-category="all">All Bakery Items (8)</button>
+        <button type="button" class="filter-btn" data-category="breads">Fresh Daily Breads (3)</button>
+        <button type="button" class="filter-btn" data-category="pastries">Morning Pastries (3)</button>
+        <button type="button" class="filter-btn" data-category="cakes">Custom Cakes (2)</button>
+      </div>
+      <p id="category-status-note" class="status-note">Showing all 8 daily bakery items. Fresh bread and pastries are baked every morning starting at 6:30 AM.</p>
+    </section>
+
+    <section class="interactive-panel" id="saved-order-box" aria-live="polite">
+      <div class="saved-summary-header">
+        <h2>My Saved Pre-Order List (<span id="saved-count">0</span>)</h2>
+        <div>
+          <button type="button" id="clear-saved-btn" class="secondary-btn">Clear Saved List</button>
+        </div>
+      </div>
+      <p id="storage-status-note">No items saved yet. Click "Add to Pre-Order List" on any bakery item below to remember your selections.</p>
+      <ul id="saved-items-list"></ul>
+      <p id="saved-estimate" class="status-note"></p>
+    </section>
 
     <div class="section-grid">
-      <section>
+      <section class="product-category-card" data-category="breads">
         <h2>Fresh Daily Breads</h2>
         <p>Our loaves are mixed by hand and baked daily until golden brown.</p>
         <img src="bakery-bread.jpg" alt="Loaves of crusty bakery bread lined up on a wooden shelf" width="650" height="420">
@@ -35,28 +60,52 @@
         </figure>
 
         <ul>
-          <li>Signature Sourdough Loaf: Classic crusty country bread ($7.00 - $9.00)</li>
-          <li>Whole Wheat Sandwich Loaf: Soft sliced bread for family lunches ($6.50 - $8.00)</li>
-          <li>Rosemary Focaccia: Flatbread baked with olive oil and fresh rosemary ($6.00 - $10.00)</li>
+          <li>
+            Signature Sourdough Loaf: Classic crusty country bread ($7.00 - $9.00)<br>
+            <button type="button" class="save-item-btn" data-item-id="sourdough-loaf">Add to Pre-Order List</button>
+          </li>
+          <li>
+            Whole Wheat Sandwich Loaf: Soft sliced bread for family lunches ($6.50 - $8.00)<br>
+            <button type="button" class="save-item-btn" data-item-id="wheat-loaf">Add to Pre-Order List</button>
+          </li>
+          <li>
+            Rosemary Focaccia: Flatbread baked with olive oil and fresh rosemary ($6.00 - $10.00)<br>
+            <button type="button" class="save-item-btn" data-item-id="rosemary-focaccia">Add to Pre-Order List</button>
+          </li>
         </ul>
       </section>
 
-      <section>
+      <section class="product-category-card" data-category="pastries">
         <h2>Morning Pastries</h2>
         <p>Grab a quick pastry and coffee on your commute or pick up a box for the family.</p>
         <ul>
-          <li>Butter and Chocolate Croissants: Flaky pastries baked every morning ($3.75 - $4.75)</li>
-          <li>Cinnamon Rolls and Berry Muffins: Made with local honey and fruit ($3.50 - $4.50)</li>
-          <li>Dozen Pastry Box: Assorted mix of twelve morning pastries ($38.00 - $44.00)</li>
+          <li>
+            Butter and Chocolate Croissants: Flaky pastries baked every morning ($3.75 - $4.75)<br>
+            <button type="button" class="save-item-btn" data-item-id="butter-croissant">Add to Pre-Order List</button>
+          </li>
+          <li>
+            Cinnamon Rolls and Berry Muffins: Made with local honey and fruit ($3.50 - $4.50)<br>
+            <button type="button" class="save-item-btn" data-item-id="cinnamon-roll">Add to Pre-Order List</button>
+          </li>
+          <li>
+            Dozen Pastry Box: Assorted mix of twelve morning pastries ($38.00 - $44.00)<br>
+            <button type="button" class="save-item-btn" data-item-id="dozen-pastry-box">Add to Pre-Order List</button>
+          </li>
         </ul>
       </section>
 
-      <section>
+      <section class="product-category-card" data-category="cakes">
         <h2>Custom Cakes</h2>
         <p>We bake custom cakes for birthdays, graduations, and small events with 48 hours notice.</p>
         <ul>
-          <li>6-Inch Cake (Serves 8-10): Chocolate, vanilla, or lemon ($35.00 - $45.00)</li>
-          <li>9-Inch Cake (Serves 16-20): Custom frosting and message included ($55.00 - $70.00)</li>
+          <li>
+            6-Inch Cake (Serves 8-10): Chocolate, vanilla, or lemon ($35.00 - $45.00)<br>
+            <button type="button" class="save-item-btn" data-item-id="cake-6-inch">Add to Pre-Order List</button>
+          </li>
+          <li>
+            9-Inch Cake (Serves 16-20): Custom frosting and message included ($55.00 - $70.00)<br>
+            <button type="button" class="save-item-btn" data-item-id="cake-9-inch">Add to Pre-Order List</button>
+          </li>
         </ul>
       </section>
     </div>
