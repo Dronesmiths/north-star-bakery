@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>North Star Bakery - Contact and Pre-Orders</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
   <header>
@@ -33,19 +34,22 @@
           <li>Saturday - Sunday: 7:00 AM - 3:00 PM</li>
           <li>Monday: Closed</li>
         </ul>
+        <p id="contact-saved-note" class="status-note"></p>
       </section>
 
       <section class="form-card">
         <h2>Inquiry and Pre-Order Request Form</h2>
-        <form action="/submit-order" method="post">
+        <form id="preorder-form" action="/submit-order" method="post" novalidate>
           <fieldset>
             <legend>Customer Contact Info</legend>
 
             <label for="name">Full Name:</label>
             <input type="text" id="name" name="name" required minlength="2" maxlength="50">
+            <span id="name-error" class="field-error" role="alert"></span>
 
             <label for="email">Email Address:</label>
             <input type="email" id="email" name="email" required>
+            <span id="email-error" class="field-error" role="alert"></span>
           </fieldset>
 
           <fieldset>
@@ -58,18 +62,22 @@
               <option value="cake-order">Custom Cake Order</option>
               <option value="general-question">General Question</option>
             </select>
+            <span id="request-type-error" class="field-error" role="alert"></span>
 
             <label for="pickup-date">Pickup Date:</label>
             <input type="date" id="pickup-date" name="pickup_date" required>
+            <span id="pickup-date-error" class="field-error" role="alert"></span>
 
             <label for="item-details">Item Details and Quantities:</label>
-            <textarea id="item-details" name="item_details" rows="4" required minlength="5" maxlength="400"></textarea>
+            <textarea id="item-details" name="item_details" rows="4" required minlength="10" maxlength="400"></textarea>
+            <span id="item-details-error" class="field-error" role="alert"></span>
 
             <label for="allergy-notes">Allergy Notes (if applicable):</label>
             <textarea id="allergy-notes" name="allergy_notes" rows="3" maxlength="250"></textarea>
           </fieldset>
 
           <button type="submit">Send Request</button>
+          <div id="form-status-message" class="form-feedback-box" role="status" aria-live="polite"></div>
         </form>
       </section>
     </div>
